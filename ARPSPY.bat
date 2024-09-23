@@ -11,15 +11,12 @@ echo ================================
 set /p choice=Bitte wähle eine Option: 
 
 if "%choice%"=="1" (
-    call python check_internet.py
+    call python check_internet_and_scan.py
     if errorlevel 1 (
         echo Keine Internetverbindung. Abbruch...
         pause
         exit
     ) else (
-        echo Starte Netzwerkscan...
-        rem Hier könntest du ARP-Befehle oder Netzwerkscans einfügen
-        arp -a
         pause
         goto menu
     )
